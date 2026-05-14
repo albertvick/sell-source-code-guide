@@ -2,62 +2,546 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>How to Sell Your App Source Code Online</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Sell Your App Source Code Online in 2025</title>
   <meta name="description" content="Complete guide for developers on how to sell app source code, get fair valuation, and find direct buyers fast.">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #f5f3ee;
+      --accent: #e8ff47;
+      --accent2: #ff6b35;
+      --gray: #1a1a1a;
+      --muted: #888;
+      --border: #2a2a2a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 48px;
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+    }
+    .nav-cta {
+      background: var(--accent);
+      color: var(--black);
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-weight: 500;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.85; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 140px 48px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 80% 20%, rgba(232,255,71,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 10% 80%, rgba(255,107,53,0.06) 0%, transparent 60%);
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gray);
+      border: 1px solid var(--border);
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      width: fit-content;
+    }
+    .hero-tag span {
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      max-width: 900px;
+      margin-bottom: 28px;
+    }
+    h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: #aaa;
+      max-width: 540px;
+      margin-bottom: 48px;
+      font-weight: 300;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      padding-top: 48px;
+      border-top: 1px solid var(--border);
+    }
+    .stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 100px 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .section-intro {
+      color: #aaa;
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin-bottom: 60px;
+    }
+
+    /* CARDS GRID */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2px;
+    }
+    .card {
+      background: var(--gray);
+      padding: 40px 36px;
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+    .card:hover { background: #1f1f1f; }
+    .card-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 4rem;
+      font-weight: 800;
+      color: var(--border);
+      line-height: 1;
+      margin-bottom: 24px;
+      transition: color 0.3s;
+    }
+    .card:hover .card-num { color: var(--accent); }
+    .card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+    .card p {
+      color: #888;
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+
+    /* HIGHLIGHT BOX */
+    .highlight-box {
+      background: var(--accent);
+      color: var(--black);
+      padding: 64px;
+      position: relative;
+      overflow: hidden;
+      margin: 0 -48px;
+    }
+    .highlight-box::before {
+      content: '→';
+      position: absolute;
+      right: 64px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 8rem;
+      font-family: 'Syne', sans-serif;
+      opacity: 0.15;
+      font-weight: 800;
+    }
+    .highlight-box h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      color: var(--black);
+      margin-bottom: 16px;
+    }
+    .highlight-box p {
+      font-size: 1rem;
+      color: rgba(0,0,0,0.65);
+      max-width: 600px;
+      margin-bottom: 32px;
+    }
+    .btn-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--black);
+      color: var(--white);
+      padding: 14px 28px;
+      border-radius: 100px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .btn-dark:hover { opacity: 0.8; }
+
+    /* STEPS */
+    .steps { display: flex; flex-direction: column; gap: 0; }
+    .step {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 32px;
+      padding: 40px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+    .step:last-child { border-bottom: none; }
+    .step-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--border);
+      line-height: 1;
+      padding-top: 4px;
+    }
+    .step h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+    .step p { color: #888; font-size: 0.95rem; }
+
+    /* QUOTE */
+    .quote-section {
+      background: var(--gray);
+      border: 1px solid var(--border);
+      padding: 64px;
+      margin: 0 -48px;
+      position: relative;
+    }
+    .quote-mark {
+      font-family: 'Syne', sans-serif;
+      font-size: 8rem;
+      color: var(--accent);
+      line-height: 0.8;
+      margin-bottom: 24px;
+      display: block;
+      opacity: 0.6;
+    }
+    blockquote {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      color: var(--white);
+      max-width: 800px;
+      margin-bottom: 28px;
+    }
+    blockquote a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(232,255,71,0.3);
+    }
+    .quote-source {
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* TAGS */
+    .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 40px; }
+    .tag {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: #888;
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-size: 0.82rem;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    /* FADE IN */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      nav, section, .highlight-box, .quote-section, footer {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      .hero { padding: 120px 24px 60px; }
+      .hero-stats { gap: 28px; flex-wrap: wrap; }
+      .highlight-box, .quote-section { margin: 0 -24px; }
+      .step { grid-template-columns: 50px 1fr; gap: 20px; }
+    }
+  </style>
 </head>
 <body>
 
-<h1>How to Sell Your App Source Code Online in 2025</h1>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">DevSell Guide</div>
+    <a href="https://sellmycode.co/" target="_blank" class="nav-cta">Sell Your Code →</a>
+  </nav>
 
-<p>
-Many developers build working apps that never get monetized. 
-Whether it's a SaaS platform, mobile app, or CRM system — 
-your code has real market value. Here's how to sell it fast 
-and privately.
-</p>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-tag"><span></span> Developer Resource · 2025</div>
+    <h1>How to Sell Your App<br>Source Code <em>Online</em></h1>
+    <p class="hero-sub">Built something that works but never monetized it? Your code has real market value. Here's everything you need to know.</p>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">48h</div>
+        <div class="stat-label">Average Evaluation</div>
+      </div>
+      <div>
+        <div class="stat-num">$15K</div>
+        <div class="stat-label">Top App Valuations</div>
+      </div>
+      <div>
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Private & Confidential</div>
+      </div>
+    </div>
+  </div>
 
-<h2>What Types of Code Sells Best?</h2>
-<p>
-Not all source code is equal in the market. Buyers actively 
-look for complete, working products — especially mobile apps, 
-SaaS dashboards, CRM systems, and AI tools. 
-Incomplete or abandoned repos rarely attract serious buyers.
-</p>
+  <!-- WHAT SELLS -->
+  <section>
+    <div class="section-label fade-in">What the Market Wants</div>
+    <h2 class="fade-in">What Types of Code<br>Sells Best?</h2>
+    <p class="section-intro fade-in">Not all source code is equal. Buyers actively look for complete, working products — especially in these categories.</p>
 
-<h2>Direct Sale vs Marketplace — Which is Better?</h2>
-<p>
-Listing on public marketplaces means waiting weeks or months 
-with no guarantee of a sale. A direct buyer, on the other hand, 
-evaluates your product privately and makes an offer within days. 
-Platforms like <a href="https://sellmycode.co/" 
-target="_blank">Sell My Code</a> specialize in direct acquisition — 
-48-hour evaluation, no public listing, payment via UPI or bank transfer.
-</p>
+    <div class="cards">
+      <div class="card fade-in">
+        <div class="card-num">01</div>
+        <h3>Mobile Apps</h3>
+        <p>iOS or Android apps with user flow, backend, and admin panel. Food delivery, real estate, and on-demand apps command the highest prices.</p>
+      </div>
+      <div class="card fade-in">
+        <div class="card-num">02</div>
+        <h3>SaaS Dashboards</h3>
+        <p>Subscription-ready platforms with multi-user support, billing logic, and working dashboards are in extremely high demand right now.</p>
+      </div>
+      <div class="card fade-in">
+        <div class="card-num">03</div>
+        <h3>CRM Systems</h3>
+        <p>Real estate, healthcare, and sales CRMs with multi-user support fetch serious offers — especially with admin panels built out.</p>
+      </div>
+      <div class="card fade-in">
+        <div class="card-num">04</div>
+        <h3>AI Tools</h3>
+        <p>AI-powered products with real functionality and demo-ready deployments. Chatbots, content tools, and lead qualifiers are top sellers.</p>
+      </div>
+    </div>
+  </section>
 
-<h2>How to Prepare Your App for Sale</h2>
-<p>
-Before approaching any buyer, make sure your product runs 
-end-to-end — user flow, admin panel, backend, and database 
-should all be demo-ready. A clean codebase with documentation 
-commands a higher offer than a raw dump of files.
-</p>
+  <!-- QUOTE / BACKLINK -->
+  <div class="quote-section">
+    <span class="quote-mark">"</span>
+    <blockquote>
+      Listing on public marketplaces means waiting months with no sale guarantee. <a href="https://sellmycode.co/" target="_blank">Sell My Code</a> offers a direct acquisition model — 48-hour evaluation, private offer, and payment via UPI or bank transfer.
+    </blockquote>
+    <div class="quote-source">Direct Sale Model · sellmycode.co</div>
+  </div>
 
-<h2>Valuation: What's Your Code Worth?</h2>
-<p>
-Valuation depends on functionality, tech stack, market demand, 
-and whether the product is actively generating revenue. 
-A working real estate CRM or on-demand service app can fetch 
-anywhere from $5,000 to $15,000 from the right buyer.
-</p>
+  <!-- HOW TO PREPARE -->
+  <section>
+    <div class="section-label fade-in">Preparation Checklist</div>
+    <h2 class="fade-in">How to Prepare Your<br>App for Sale</h2>
+    <p class="section-intro fade-in">Before approaching any buyer, your product needs to be demo-ready. Here's exactly what that means.</p>
 
-<h2>Final Thoughts</h2>
-<p>
-If you've built something that works — don't let it sit in 
-a private repository. The developer economy has a growing 
-market for white-label and ready-to-deploy software. 
-Explore your options, prepare a solid demo, and approach 
-a direct buyer for the fastest path to monetization.
-</p>
+    <div class="steps">
+      <div class="step fade-in">
+        <div class="step-num">01</div>
+        <div>
+          <h3>End-to-End Demo Ready</h3>
+          <p>User flow, admin panel, backend logic, and database should all work without errors. A broken demo kills deals instantly.</p>
+        </div>
+      </div>
+      <div class="step fade-in">
+        <div class="step-num">02</div>
+        <div>
+          <h3>Clean, Documented Codebase</h3>
+          <p>Readable code with basic documentation commands 20–40% higher offers than a raw dump of files with no structure.</p>
+        </div>
+      </div>
+      <div class="step fade-in">
+        <div class="step-num">03</div>
+        <div>
+          <h3>Deployment Instructions</h3>
+          <p>Include a README with setup steps. Buyers want confidence they can run it — not spend weeks figuring out your stack.</p>
+        </div>
+      </div>
+      <div class="step fade-in">
+        <div class="step-num">04</div>
+        <div>
+          <h3>Tech Stack Documentation</h3>
+          <p>List all frameworks, libraries, third-party APIs, and dependencies clearly. Buyers evaluate scalability before making offers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHT BOX -->
+  <div class="highlight-box">
+    <h2>Direct Sale vs Marketplace — Which is Better?</h2>
+    <p>Public marketplaces force you to wait. A direct buyer evaluates your product privately and makes an offer within days — no public listing, no identity reveal, no commission cuts.</p>
+    <a href="https://sellmycode.co/" target="_blank" class="btn-dark">Explore Direct Sale →</a>
+  </div>
+
+  <!-- VALUATION -->
+  <section>
+    <div class="section-label fade-in">Know Your Worth</div>
+    <h2 class="fade-in">What's Your Code Actually Worth?</h2>
+    <p class="section-intro fade-in">Valuation depends on four core factors. Understanding these helps you negotiate from a position of strength.</p>
+
+    <div class="cards">
+      <div class="card fade-in">
+        <div class="card-num">↗</div>
+        <h3>Functionality Depth</h3>
+        <p>How complete is the product? A fully working app with all flows built out is worth 3–5x more than a partial build.</p>
+      </div>
+      <div class="card fade-in">
+        <div class="card-num">↗</div>
+        <h3>Market Demand</h3>
+        <p>Real estate, on-demand, and AI categories command premium prices right now. Niche tools may take longer to find the right buyer.</p>
+      </div>
+      <div class="card fade-in">
+        <div class="card-num">↗</div>
+        <h3>Revenue History</h3>
+        <p>Even small MRR (monthly recurring revenue) can double or triple your valuation. Proven demand = higher offer.</p>
+      </div>
+      <div class="card fade-in">
+        <div class="card-num">↗</div>
+        <h3>Tech Stack</h3>
+        <p>Modern stacks (React, Node, Flutter) are more attractive to buyers than legacy code. Clean architecture adds significant value.</p>
+      </div>
+    </div>
+
+    <div class="tags fade-in">
+      <span class="tag">Real Estate CRM → $7K–$10K</span>
+      <span class="tag">On-Demand App → $5K–$8K</span>
+      <span class="tag">B2B SaaS → $12K–$18K</span>
+      <span class="tag">AI Tool → $4K–$7K</span>
+      <span class="tag">WordPress Plugin → $1K–$4K</span>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>Developer Guide · Source Code Marketplace 2025</div>
+    <div>Powered by <a href="https://sellmycode.co/" target="_blank">Sell My Code</a></div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
 
 </body>
 </html>
